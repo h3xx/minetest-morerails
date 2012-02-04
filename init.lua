@@ -4,26 +4,26 @@
 minetest.register_craft({
 	output = 'default:rail 6',
 	recipe = {
-		{'default:copper_ingot', '', 'default:copper_ingot'},
-		{'default:copper_ingot', 'default:stick', 'default:copper_ingot'},
-		{'default:copper_ingot', '', 'default:copper_ingot'},
+		{'moreores:copper_ingot', '', 'moreores:copper_ingot'},
+		{'moreores:copper_ingot', 'default:stick', 'moreores:copper_ingot'},
+		{'moreores:copper_ingot', '', 'moreores:copper_ingot'},
 	}
 })
 
 minetest.register_craft({
 	output = 'default:rail 6',
 	recipe = {
-		{'default:tin_ingot', '', 'default:tin_ingot'},
-		{'default:tin_ingot', 'default:stick', 'default:tin_ingot'},
-		{'default:tin_ingot', '', 'default:tin_ingot'},
+		{'moreores:tin_ingot', '', 'moreores:tin_ingot'},
+		{'moreores:tin_ingot', 'default:stick', 'moreores:tin_ingot'},
+		{'moreores:tin_ingot', '', 'moreores:tin_ingot'},
 	}
 })
 
 minetest.register_craft({
 	output = 'default:rail 15',
 	recipe = {
-		{'default:bronze_ingot', '', 'default:bronze_ingot'},
-		{'default:bronze_ingot', 'default:stick', 'default:bronze_ingot'},
-		{'default:bronze_ingot', '', 'default:bronze_ingot'},
+		{'moreores:bronze_ingot', '', 'moreores:bronze_ingot'},
+		{'moreores:bronze_ingot', 'default:stick', 'moreores:bronze_ingot'},
+		{'moreores:bronze_ingot', '', 'moreores:bronze_ingot'},
 	}
 })
