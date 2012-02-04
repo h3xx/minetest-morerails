@@ -1,29 +1,57 @@
--- iron is just so hard to come by, so let the more common ores make rails too
--- but not as many
+-- More Rails
+--
+-- Adds the ability to craft rails from more materials.
+--
+-- Right now, it only supports the ores from `moreores'. Perhaps more to come.
+--
+-- See https://github.com/h3xx/minetest-morerails
 
-minetest.register_craft({
-	output = 'default:rail 6',
-	recipe = {
-		{'moreores:copper_ingot', '', 'moreores:copper_ingot'},
-		{'moreores:copper_ingot', 'default:stick', 'moreores:copper_ingot'},
-		{'moreores:copper_ingot', '', 'moreores:copper_ingot'},
-	}
-})
+-- Functions
 
-minetest.register_craft({
-	output = 'default:rail 6',
-	recipe = {
-		{'moreores:tin_ingot', '', 'moreores:tin_ingot'},
-		{'moreores:tin_ingot', 'default:stick', 'moreores:tin_ingot'},
-		{'moreores:tin_ingot', '', 'moreores:tin_ingot'},
-	}
-})
+local register_rail = function(type, name)
+	nodename = "morerails:"..type.."_rail"
+	desc = name.." Rail"
+	
+	tile_base    = "morerails_"..type.."_rail"
+	tile_default = tile_base..".png"
+	tile_curve   = tile_base.."_curved.png"
+	tile_t_junct = tile_base.."_t_junction.png"
+	tile_crossing= tile_base.."_crossing.png"
 
-minetest.register_craft({
-	output = 'default:rail 15',
-	recipe = {
-		{'moreores:bronze_ingot', '', 'moreores:bronze_ingot'},
-		{'moreores:bronze_ingot', 'default:stick', 'moreores:bronze_ingot'},
-		{'moreores:bronze_ingot', '', 'moreores:bronze_ingot'},
-	}
-})
+	material = 'moreores:'..type..'_ingot'
+
+	-- Nodes
+
+	minetest.register_node(nodename, {
+		description = desc,
+		drawtype = "raillike",
+		tile_images = {tile_default, tile_curve, tile_t_junct, tile_crossing},
+		inventory_image = tile_default,
+		wield_image = tile_default,
+		paramtype = "light",
+		is_ground_content = true,
+		walkable = false,
+		selection_box = {
+			type = "fixed",
+		},
+		material = minetest.digprop_dirtlike(0.75),
+	})
+
+	-- Crafting
+
+	minetest.register_craft({
+		output = nodename..' 15',
+		recipe = {
+			{material, '', material},
+			{material, 'default:stick', material},
+			{material, '', material},
+		}
+	})
+
+end
+
+register_rail('bronze', 'Bronze')
+register_rail('copper', 'Copper')
+register_rail('gold', 'Gold')
+register_rail('silver', 'Silver')
+register_rail('tin', 'Tin')
