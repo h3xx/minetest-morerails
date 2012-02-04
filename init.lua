@@ -4,10 +4,19 @@
 --
 -- Right now, it only supports the ores from `moreores'. Perhaps more to come.
 --
--- See https://github.com/h3xx/minetest-morerails
+-- See also: https://github.com/h3xx/minetest-morerails
+--
+-- Copyright (C) 2012 Dan Church.
+-- License (images) CC BY-NC-SA 3.0: Creative Commons
+--   Attribution-NonCommercial-ShareAlike 3.0 Unported
+--   (http://creativecommons.org/licenses/by-nc-sa/3.0/).
+-- License (code) GPLv3+: GNU GPL version 3 or later
+--   (http://gnu.org/licenses/gpl.html).
+-- This is free software: you are free to change and redistribute it. There is
+-- NO WARRANTY, to the extent permitted by law.
+--
 
--- Functions
-
+-- Shortcut function
 local register_rail = function(type, name)
 	nodename = "morerails:"..type.."_rail"
 	desc = name.." Rail"
