@@ -22,10 +22,10 @@ local register_rail = function(type, name)
 	desc = name.." Rail"
 	
 	tile_base    = "morerails_"..type.."_rail"
-	tile_default = tile_base..".png"
-	tile_curve   = tile_base.."_curved.png"
-	tile_t_junct = tile_base.."_t_junction.png"
-	tile_crossing= tile_base.."_crossing.png"
+	tile_default = "morerails_base.png^"..tile_base..".png"
+	tile_curve   = "morerails_base_curved.png^"..tile_base.."_curved.png"
+	tile_t_junct = "morerails_base_t_junction.png^"..tile_base.."_t_junction.png"
+	tile_crossing= "morerails_base_crossing.png^"..tile_base.."_crossing.png"
 
 	material = 'moreores:'..type..'_ingot'
 
