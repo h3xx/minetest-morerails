@@ -64,3 +64,5 @@ register_rail('copper', 'Copper')
 register_rail('gold', 'Gold')
 register_rail('silver', 'Silver')
 register_rail('tin', 'Tin')
+
+print "[morerails] Mod loaded!"
